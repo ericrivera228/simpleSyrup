@@ -7,7 +7,11 @@
     border-bottom-width: 1px;
 }
 
-.date-time-row:hover{
+.date-time-row:last-child{
+	border-bottom-style: none
+}
+
+.date-time-row:hover:not(.header-row){
 	background-color: #EEEEEE;
 }
 
