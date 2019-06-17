@@ -34,6 +34,7 @@
     flex-direction: row;
     align-items: center;
     height: 100%;
+    margin-left: 35px;
   }
 
   .navbar button.flippy-hamburger{
@@ -43,6 +44,7 @@
   	align-items: center;
   	background-color: transparent;
   	min-width: 52px;
+    border-radius: 50%;
   }
 
   .navbar div{
@@ -150,4 +152,10 @@
 
   }
 
+}
+
+.navbar-wrapper button{
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }

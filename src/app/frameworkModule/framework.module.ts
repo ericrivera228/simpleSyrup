@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Material design imports: Since the app bar needs the progress loader, just loading that one component instead of the whole material module
-import { MatProgressBarModule } from '@angular/material';
+import { MatButtonModule, MatProgressBarModule, MatRippleModule } from '@angular/material';
 
 //Service module imports
 import { ServiceModule } from '../serviceModule/service.module'
@@ -26,6 +26,8 @@ import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    MatButtonModule,
+    MatRippleModule,
     MatProgressBarModule,
     ServiceModule.forRoot(),
   ],

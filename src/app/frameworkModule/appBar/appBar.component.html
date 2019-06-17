@@ -4,9 +4,14 @@
 
 		<div>
 
-	      	<button mat-icon-button class="flippy-hamburger" [class.is-active]="!showMenuButton" (click)="onMenuButtonClick($event)">
-			  <span>toggle menu</span>
+	      	<button  mat-icon-button [@fadeInOut] *ngIf="!showBackButton" >
+			  <i class="material-icons md-24">menu</i>
 			</button>
+
+	      	<button  mat-icon-button [@fadeInOut] *ngIf="showBackButton" (click)="onBackButtonClick($event)">
+			  <i class="material-icons md-24">arrow_back</i>
+			</button>
+
 
 		</div>
 

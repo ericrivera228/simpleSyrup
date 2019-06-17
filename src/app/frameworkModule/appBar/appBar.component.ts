@@ -1,5 +1,7 @@
 //Angular imports
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 //Rxjs imports
 import { Subscription } from 'rxjs';
@@ -46,7 +48,11 @@ export class AppBarComponent implements OnInit {
 		return this._showLoader;
 	}
 
-	constructor(private navbarService: AppBarService) { }
+	get showBackButton(): boolean{
+		return this.router.url !== '/events/1' && this.router.url !== '/'
+	}
+
+	constructor(private navbarService: AppBarService, private location: Location, private router: Router) { }
 
 	/****************
 	* ng Events
@@ -70,8 +76,8 @@ export class AppBarComponent implements OnInit {
 	/****************
 	* Event handlers
 	****************/
-	onMenuButtonClick(evt: Event){
-		this._showMenuButton = !this._showMenuButton;
+	onBackButtonClick(evt: Event){
+		this.location.back();
 	}
 
 }

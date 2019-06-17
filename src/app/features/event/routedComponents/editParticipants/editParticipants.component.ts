@@ -36,15 +36,7 @@ const USE_MOCK_DATA = true;
   styleUrls: ['./editParticipants.component.css'],
   animations: [
     Transitions.fadeInOutOnLoad,
-		trigger('fadeInOut', [
-		    transition(':enter', [   // :enter is alias to 'void => *'
-		      style({ opacity: 0 }),
-		      animate('100ms', style({ opacity: 1 }))
-		    ]),
-		    transition(':leave', [   // :leave is alias to '* => void'
-		      animate('100ms', style({ opacity: 0 }))
-		    ])
-	  ])
+	Transitions.fadeInOut
   ]
 })
 export class EditParticipantsComponent extends EventSubPageComponent{

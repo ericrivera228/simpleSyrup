@@ -3,7 +3,7 @@ import { animate, style } from '@angular/animations';
 export class Animations {
 
 	//Property backing variables
-	static durationShort = 150;
+	static durationShort = 100;
 	static durationMedium = 300;
 
 	static animateToAutoHeight = animate(Animations.durationShort + 'ms ease-in-out', style({height: '*'}));
