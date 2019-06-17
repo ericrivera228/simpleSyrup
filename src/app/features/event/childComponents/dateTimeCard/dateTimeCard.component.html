@@ -19,11 +19,11 @@
 				<span class="col-2">{{proposeTime.time}}</span>
 				<div class="col-3 vote-count"><span style="color:#4CAF50;">{{proposeTime.acceptVotes}}</span> | <span style="color:red">{{proposeTime.declineVotes}}</span></div>
 
-				<button mat-icon-button class="col-1" (click)="onAcceptClick($event, proposeTime)">
-					<i class="material-icons md-24" style="color: #4CAF50">check</i>
+				<button mat-icon-button class="col-1 vote-button accept" [class.vote-selected] = "proposeTime.userVote === 'accept'" (click)="onAcceptClick($event, proposeTime)">
+					<i class="material-icons md-24">check</i>
 				</button>
 
-				<button mat-icon-button class="col-1" (click)="onDeclineClick($event, proposeTime)">
+				<button mat-icon-button class="col-1 vote-button decline" [class.vote-selected] = "proposeTime.userVote === 'decline'" (click)="onDeclineClick($event, proposeTime)">
 					<i class="material-icons md-24">clear</i>
 				</button>
 

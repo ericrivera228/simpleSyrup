@@ -16,7 +16,11 @@
 }
 
 .date-time-row button{
-	max-width: 40px;
+	max-width: 30px;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	text-align: center;
 }
 
 .date-time-row i{
@@ -48,4 +52,29 @@
 	color: inherit;
 	width: 100%;
 	text-decoration: none;
+}
+
+.vote-button{
+	transition: color 100ms ease-in-out, background-color 100ms ease-in-out;
+}
+
+.accept{
+	color: #4CAF50;
+	margin-right: 5px
+}
+
+.decline{
+	color: red;
+}
+
+.vote-selected{
+	color: white;
+}
+
+.accept.vote-selected{
+	background-color: #4CAF50;
+}
+
+.decline.vote-selected{
+	background-color: red;
 }
