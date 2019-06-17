@@ -3,67 +3,28 @@
 	<div inject-body *ngIf="!showEmptyState && !eventHasOfficalDate" style="margin-bottom: -20px">
 
 		<div class="row date-time-row header-row">
-			<span class="col-7">Proposed Date & Time</span>
+			<span class="col-5">Proposed Date</span>
+			<span class="col-2">Time</span>
 			<div class="col-3" style="text-align: center">
 				<span >Votes</span>
 			</div>
-			<span class="col-2" style="padding-left: 5px; padding-right: 5px;">Work for you?</span>
+			<span class="col-2" style="padding-left: 5px; padding-right: 5px;">Your Vote</span>
 		</div>
 
-		<div class="row date-time-row">
+		<div class="row date-time-row" *ngFor="let proposeTime of proposedTimes">
 
-			<a [routerLink]="'DateTimeDetails'" class="dateTimeDetails-link">
+			<a (click)="onRowClick($event)" class="dateTimeDetails-link">
 
-				<span class="col-5">Thursday, 10/31/2018</span>
-				<span class="col-2">8:00pm</span>
-				<div class="col-3 vote-count"><span style="color:#4CAF50;">10</span> | <span style="color:red">0</span></div>
+				<span class="col-5">{{proposeTime.date}}</span>
+				<span class="col-2">{{proposeTime.time}}</span>
+				<div class="col-3 vote-count"><span style="color:#4CAF50;">{{proposeTime.acceptVotes}}</span> | <span style="color:red">{{proposeTime.declineVotes}}</span></div>
 
-				<button mat-icon-button class="col-1">
+				<button mat-icon-button class="col-1" (click)="onAcceptClick($event, proposeTime)">
 					<i class="material-icons md-24" style="color: #4CAF50">check</i>
 				</button>
 
-				<button mat-icon-button class="col-1">
+				<button mat-icon-button class="col-1" (click)="onDeclineClick($event, proposeTime)">
 					<i class="material-icons md-24">clear</i>
-				</button>
-
-			</a>
-
-		</div>
-
-		<div class="row date-time-row">
-
-			<a [routerLink]="'DateTimeDetails'" class="dateTimeDetails-link">
-
-				<span class="col-5">Monday, 1/1/2018</span>
-				<span class="col-2">10:59am</span>
-				<div class="col-3 vote-count"><span style="color:#4CAF50">5</span> | <span style="color:red">2</span></div>
-
-				<button mat-icon-button class="col-1">
-					<i class="material-icons md-24" style="color: #4CAF50">check</i>
-				</button>
-
-				<button mat-icon-button class="col-1">
-					<i class="material-icons md-24">clear</i>
-				</button>
-
-			</a>
-
-		</div>
-
-		<div class="row date-time-row">
-
-			<a [routerLink]="'DateTimeDetails'" class="dateTimeDetails-link" style="border-bottom: none;">
-
-				<span class="col-5">Saturday 12/25/2021</span>
-				<span class="col-2">10:59am</span>
-				<div class="col-3 vote-count"><span style="color:#4CAF50">2</span> | <span style="color:red">6</span></div>
-
-				<button mat-icon-button class="col-1">
-					<i class="material-icons md-24">check</i>
-				</button>
-
-				<button mat-icon-button class="col-1">
-					<i class="material-icons md-24" style="color: red">clear</i>
 				</button>
 
 			</a>
