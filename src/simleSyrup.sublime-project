@@ -4,5 +4,9 @@
 		{
 			"path": "app"
 		}
-	]
+	],
+	"settings":
+    {
+        "SublimeLinter.linters.tslint.disable": true
+    }
 }

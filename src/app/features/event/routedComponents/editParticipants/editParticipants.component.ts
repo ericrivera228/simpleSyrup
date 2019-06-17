@@ -4,6 +4,7 @@ import { Component, Injector, Input, OnInit, ViewChildren, QueryList } from '@an
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { MatChipInputEvent } from '@angular/material';
 import { MatDialog } from '@angular/material';
+import { transition, trigger, animate, state, style } from '@angular/animations';
 
 //rxjs imports
 import { Observable, of, zip } from 'rxjs';
@@ -34,7 +35,8 @@ const USE_MOCK_DATA = true;
   templateUrl: './editParticipants.component.html',
   styleUrls: ['./editParticipants.component.css'],
   animations: [
-    Transitions.fadeInOutOnLoad
+    Transitions.fadeInOutOnLoad,
+	Transitions.fadeInOut
   ]
 })
 export class EditParticipantsComponent extends EventSubPageComponent{
@@ -76,6 +78,15 @@ export class EditParticipantsComponent extends EventSubPageComponent{
 	*/
 	get disableInviteButton(): boolean{
 		return UtilityFunctions.isNullOrUndefined(this._invitedUsers) || this._invitedUsers.length <= 0;
+	}
+
+	get placeholderPosition(): string{
+
+		if(this._invitedUsers.length > 0){
+			return 'always';	
+		}
+		
+		return 'auto';
 	}
 
 	constructor(injector: Injector, private router: Router, private dialogService: DialogService, private snackBarService: SnackBarService, private userService: UserService) {

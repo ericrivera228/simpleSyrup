@@ -40,6 +40,7 @@ button{
 
 mat-form-field{
 	width: 100%;
+	min-height: 85px;
 }
 
 .invite-button-wrapper{

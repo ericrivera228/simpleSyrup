@@ -6,45 +6,24 @@
 
 		<div *ngIf="!showLoadError">
 
-<!-- 			<mat-tab-group>
+			<mat-form-field [floatLabel]="placeholderPosition">
+			  <mat-chip-list #chipList>
+			    <ssUserChip *ngFor="let user of invitedUsers" [@fadeInOut] [user]="user" (removeButtonClicked)="onUserChipRemoveButtonClick($event)"></ssUserChip>
+			    <input placeholder="Search for friends" [formControl]="inviteInput"
+			           [matChipInputFor]="chipList"
+			           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+			           [matChipInputAddOnBlur]="addOnBlur"
+			           (matChipInputTokenEnd)="add($event)" />
+			  </mat-chip-list>
+			</mat-form-field>
 
-				<mat-tab label="Search">
+			<div *ngFor="let person of filteredUsersAndParticipants" class="col-lg-4 col-sm-6 col-12 participant-col">
 
-					<div class="tab-content"> -->
+				<ssUserBigChip *ngIf="isUserObject(person)" #userBigChip [user]="person" [selected]="isUserInvited(person)" (userBigChipClicked)="onUserBigChipClicked($event)" (pictureLoaded)="onPictureLoaded($event)"></ssUserBigChip>
 
-						<mat-form-field>
-						  <mat-chip-list #chipList>
-						    <ssUserChip *ngFor="let user of invitedUsers" [user]="user" (removeButtonClicked)="onUserChipRemoveButtonClick($event)"></ssUserChip>
-						    <input placeholder="Search for friends" [formControl]="inviteInput"
-						           [matChipInputFor]="chipList"
-						           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-						           [matChipInputAddOnBlur]="addOnBlur"
-						           (matChipInputTokenEnd)="add($event)" />
-						  </mat-chip-list>
-						</mat-form-field>
-
-						<div *ngFor="let person of filteredUsersAndParticipants" class="col-lg-4 col-sm-6 col-12 participant-col">
-
-							<ssUserBigChip *ngIf="isUserObject(person)" #userBigChip [user]="person" [selected]="isUserInvited(person)" (userBigChipClicked)="onUserBigChipClicked($event)" (pictureLoaded)="onPictureLoaded($event)"></ssUserBigChip>
-
-							<ssParticipantBigChip *ngIf="isParticipantObject(person)" [participant]="person" [selected]="true" (pictureLoaded)="onPictureLoaded($event)"></ssParticipantBigChip>
-							
-						</div>
-
-					<!-- </div>
-
-				</mat-tab>
-
-				<mat-tab label="Group">
-
-					<div class="tab-content">
-						Users will be able to use this tab to select groups of people.
-					</div>
-
-
-				</mat-tab>
-
-			</mat-tab-group> -->
+				<ssParticipantBigChip *ngIf="isParticipantObject(person)" [participant]="person" [selected]="true" (pictureLoaded)="onPictureLoaded($event)"></ssParticipantBigChip>
+				
+			</div>
 
 			<div class="invite-button-wrapper">
 				<button mat-raised-button color="accent" (click)="onInviteButtonClick($event)" [disabled]="disableInviteButton">Send Invites</button>
