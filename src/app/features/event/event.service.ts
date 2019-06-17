@@ -118,11 +118,6 @@ export class EventService{
 		participant10.status = "Tentative";
 		participant10.user = MockUserData.user10;
 
-		let participant11: Participant = new Participant();
-		participant11.id = 15;
-		participant11.status = "Tentative";	
-		participant11.user = MockUserData.user11;
-
 		let participant12: Participant = new Participant();
 		participant12.id = 15;
 		participant12.status = "Attending";	
@@ -133,8 +128,7 @@ export class EventService{
 		participant13.status = "Attending";	
 		participant13.user = MockUserData.user13;
 		
-		//this.mockParticipantData.push(participant2, participant1, participant3, participant4, participant5, participant12, participant6, participant7, participant8, participant9, participant10, participant11);
-		this.mockParticipantData.push(participant2, participant1, participant3, participant4, participant5, participant6, participant7, participant8, participant9, participant10, participant11);
+		this.mockParticipantData.push(participant2, participant1, participant3, participant4, participant5, participant6, participant7, participant8, participant9);
 		
 		this.mockEventData = new Event(); 
 		this.mockEventData.id = 10;
