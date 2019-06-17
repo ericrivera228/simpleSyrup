@@ -35,11 +35,11 @@
     align-items: center;
   }
 
-  .ss-chip-wrapper .picture-wrapper ~ .md-chip-wrapper mat-basic-chip span{
+  .ss-chip-wrapper .picture-wrapper ~ .md-chip-wrapper mat-chip span{
     margin-left: $chip-height;
   }
 
-  .ss-chip-wrapper .picture-wrapper ~ .md-chip-wrapper mat-basic-chip{
+  .ss-chip-wrapper .picture-wrapper ~ .md-chip-wrapper mat-chip{
     padding-left: 8px;
   }
 
@@ -47,11 +47,11 @@
     margin-left: -$chip-height;
   }
 
-  .ss-chip-wrapper .md-chip-wrapper mat-basic-chip.removable{
+  .ss-chip-wrapper .md-chip-wrapper mat-chip.removable{
     padding-right: 0;
   }
 
-  .ss-chip-wrapper mat-basic-chip{
+  .ss-chip-wrapper mat-chip{
     border-radius: 24px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -65,7 +65,7 @@
     height: $chip-height;
   }
 
-  .ss-chip-wrapper mat-basic-chip i{
+  .ss-chip-wrapper mat-chip i{
     margin: 4px;
     border-radius: 50%;
     font-size: 1.2em;
