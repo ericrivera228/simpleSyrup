@@ -40,7 +40,7 @@ $ss-orange: (
     400: white,
     500: white,
     600: $black-87-opacity,
-    700: $black-87-opacity,
+    700: white,
     800: white,
     900: white,
     A100: $black-87-opacity,
@@ -83,8 +83,8 @@ $ss-blue-grey: (
   )
 );
 
-$ss-theme-primary: mat-palette($ss-blue-grey, 300, 100, 500);
-$ss-theme-accent: mat-palette($ss-orange, 500, 200, 800);
+$ss-theme-primary: mat-palette($ss-blue-grey, 400, 100, 500);
+$ss-theme-accent: mat-palette($ss-orange, 700, 200, 800);
 $ss-theme-warn: mat-palette($mat-red);
 
 $ss-theme: mat-light-theme($ss-theme-primary, $ss-theme-accent, $ss-theme-warn);
