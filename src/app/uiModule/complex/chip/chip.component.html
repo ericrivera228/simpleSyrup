@@ -6,7 +6,7 @@
 
 	<div class="md-chip-wrapper">
 
-		<mat-chip selected="true" [color]="'primary'" [class.removable]="removable">
+		<mat-chip selected="true" [color]="'primary'" [class.removable]="removable" [disableRipple]="true">
 			<span>{{displayText}}</span><i class="material-icons" *ngIf="removable" (click)="onRemoveButtonClicked($event)">close</i>
 		</mat-chip>
 
