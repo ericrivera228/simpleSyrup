@@ -1,0 +1,56 @@
+@mixin ss-dateTimePicker($theme) {
+
+	$accent: map-get($theme, accent);
+	$primary: map-get($theme, primary);
+  
+	.title-year-wrapper{
+		color: rgba(255, 255, 255, 0.5);
+	}
+
+	.title-wrapper{
+		background-color: mat-color($accent, 1);
+		color: white;
+		padding: 24px;
+	}
+
+	.title-year-wrapper{
+		font-size: 14px;
+	}
+
+	.title-date-wrapper{
+		font-size: 32px;	
+		font-weight: bold;
+	}
+
+	.calendar-wrapper{
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.month-selector-row{
+		padding-top: 15px;
+		padding-bottom: 15px;
+		width: 100%;
+	}
+
+	.month-title{
+		text-align: center;
+	}
+
+	.right-selector{
+		text-align: right;
+	}
+
+	.day-header{
+		font-size: 0;
+	}
+
+	.day-column{
+		color: rgba(0, 0, 0, 0.5);
+		display: inline-block;
+		font-size: 16px;
+		text-align: center;
+		width: 14.28%;
+	}
+
+ }

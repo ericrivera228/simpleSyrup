@@ -1,0 +1,59 @@
+.label-title{
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.label-title h2{	
+	margin-bottom: 0;
+}
+
+.label-value{
+	margin-left: 36px;
+}
+
+ssUserBigChip{
+	display: block;
+	margin-top: 10px;
+}
+
+.votes-section{
+	margin-top: 20px;
+}
+
+.votes-section h3{
+	text-align: center; 
+	width: 100%
+}
+
+.votes-section-title{
+	width: 100%;
+	text-align: center;
+}
+
+.votes-for-section{
+	border-right-style: solid;
+	border-right-width: 2px;
+	border-right-color: rgba(0, 0, 0, 0.12);
+}
+
+.votes-header > i{
+	margin-right: 10px;
+}
+
+.votes-header{
+	margin-top: 20px;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.votes-row{
+	margin-bottom: 30px;
+}
+
+.action-buttons{
+	text-align: center;
+	margin-top: 25px;
+}
