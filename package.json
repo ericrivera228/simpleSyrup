@@ -31,7 +31,7 @@
     "apollo-cache-inmemory": "^1.1.1",
     "apollo-client": "^2.0.3",
     "bootstrap": "4.1.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "graphql": "^0.11.7",
     "graphql-tag": "^2.5.0",
     "jquery": "^3.2.1",
